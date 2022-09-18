@@ -9,12 +9,12 @@
 int main() {
     double spy     = 86400.0 * 365.0;
 
-    double nH       = 2e4;
-    double zeta     = 1.3e-17;
+    double nH       = 1.0e5;
     double Tgas     = 15.0;
+    double zeta     = 1.0e-17;
     double Av       = 10.0;
     double omega    = 0.5;
-    double G0       = 1.0;
+    double G0       = 4.0;
     double rG       = 1e-5;
     double gdens    = 7.6394373e-13 * nH;
     double sites    = 1.5e15;
@@ -26,11 +26,12 @@ int main() {
     double crdeseff = 1.0e5;
     double h2deseff = 1.0e-2;
     double uvcreff  = 1.0e-3;
+    double ksp      = 0.0;
 
     NaunetData data;
     data.nH       = nH;
-    data.zeta     = zeta;
     data.Tgas     = Tgas;
+    data.zeta     = zeta;
     data.Av       = Av;
     data.omega    = omega;
     data.G0       = G0;
@@ -45,29 +46,32 @@ int main() {
     data.crdeseff = crdeseff;
     data.h2deseff = h2deseff;
     data.uvcreff  = uvcreff;
-
+    data.ksp      = ksp;
+    data.eb_crd   = 2.0e3;
+    data.eb_h2d   = 1.21e3;
+    data.eb_uvd   = 1.00e4;
+    
     Naunet naunet;
-    naunet.Init();
+    naunet.Init(1, 1e-20, 1e-5, 500);
 
 #ifdef USE_CUDA
     naunet.Reset(1);
 #endif
 
     double y[NEQUATIONS] = {0.0};
-    // for (int i = 0; i < NEQUATIONS; i++)
-    // {
-    //     y[i] = 1.e-40;
-    // }
+
+    for (int i = 0; i < NEQUATIONS; i++)
+    {
+        y[i] = 1.e-25;
+    }
     y[IDX_H2I]           = 0.5 * nH;
     y[IDX_HI]            = 5.0e-5 * nH;
     y[IDX_HeI]           = 9.75e-2 * nH;
     y[IDX_NI]            = 7.5e-5 * nH;
     y[IDX_OI]            = 1.8e-4 * nH;
     y[IDX_COI]           = 1.4e-4 * nH;
-    // y[IDX_SI]            = 8.0e-8 * nH;
     y[IDX_SiI]           = 8.0e-9 * nH;
     y[IDX_MgI]           = 7.0e-9 * nH;
-    // y[IDX_ClI]           = 4.0e-9 * nH;
 
     FILE *fbin           = fopen("evolution_singlegrid.bin", "w");
     FILE *ftxt           = fopen("evolution_singlegrid.txt", "w");
@@ -78,7 +82,9 @@ int main() {
     double rates[NREACTIONS] = {0.0};
 #endif
 
-    double logtstart = 3.0, logtend = 7.0;
+    realtype y_init[NEQUATIONS];
+
+    double logtstart = 2.0, logtend = 7.0;
     double dtyr = 0.0, time = 0.0;
     for (double logtime = logtstart; logtime < logtend; logtime += 0.1) {
 #ifdef NAUNET_DEBUG
@@ -89,6 +95,10 @@ int main() {
         }
         fprintf(rtxt, "\n");
 #endif
+
+        for (int idx = IDX_GCH3OHI; idx <= IDX_SiOHII; idx++) {
+            y_init[idx] = y[idx];
+        }
 
         dtyr = pow(10.0, logtime) - time;
 
@@ -103,7 +113,7 @@ int main() {
 
         Timer timer;
         timer.start();
-        naunet.Solve(y, dtyr * spy, &data);
+        int flag = naunet.Solve(y, dtyr * spy, &data);
         timer.stop();
 
         time += dtyr;
@@ -112,6 +122,7 @@ int main() {
         double duration = timer.elapsed();
         fprintf(ttxt, "%8.5e \n", duration);
         printf("Time = %13.7e yr, elapsed: %8.5e sec\n", time, duration);
+
     }
 
     // save the final results
@@ -130,6 +141,9 @@ int main() {
 #ifdef NAUNET_DEBUG
     fclose(rtxt);
 #endif
+//
+
+
 
     naunet.Finalize();
 

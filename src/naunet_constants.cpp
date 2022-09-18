@@ -1,3 +1,4 @@
+// 
 // clang-format off
 #include "naunet_constants.h"
 
@@ -27,35 +28,38 @@ const double echarge         = 4.80320425e-10;
 // Boltzmann constant (erg/K)
 const double kerg            = 1.380658e-16;
 
-const double zism            = 1.3e-17;
-const double nmono           = 2.0;
-const double eb_GCH3OHI      = 5000.0;
-const double eb_GCH4I        = 960.0;
-const double eb_GCOI         = 1300.0;
-const double eb_GCO2I        = 2600.0;
-const double eb_GH2CNI       = 2400.0;
-const double eb_GH2COI       = 4500.0;
-const double eb_GH2OI        = 5600.0;
-const double eb_GH2SiOI      = 4400.0;
-const double eb_GHCNI        = 3700.0;
-const double eb_GHNCI        = 3800.0;
-const double eb_GHNCOI       = 4400.0;
-const double eb_GHNOI        = 3000.0;
-const double eb_GMgI         = 5300.0;
-const double eb_GN2I         = 1100.0;
-const double eb_GNH3I        = 5500.0;
-const double eb_GNOI         = 1600.0;
-const double eb_GNO2I        = 2400.0;
-const double eb_GO2I         = 1200.0;
-const double eb_GO2HI        = 5000.0;
-const double eb_GSiCI        = 3500.0;
-const double eb_GSiC2I       = 4300.0;
-const double eb_GSiC3I       = 5100.0;
-const double eb_GSiH4I       = 13000.0;
-const double eb_GSiOI        = 3500.0;
+// reduced Planck constant
+const double hbar            = 1.054571726e-27;
 
+const double zism = 1.3e-17;
+const double habing = 100000000.0;
+const double crphot = 10000.0;
+const double nmono = 2.0;
 
-
+const double eb_GH2CNI = 2400.0;
+const double eb_GHNCI = 2050.0;
+const double eb_GNO2I = 2400.0;
+const double eb_GSiOI = 3500.0;
+const double eb_GCOI = 1100.0;
+const double eb_GHNCOI = 2850.0;
+const double eb_GMgI = 5300.0;
+const double eb_GNOI = 1600.0;
+const double eb_GO2I = 1000.0;
+const double eb_GO2HI = 3650.0;
+const double eb_GSiCI = 3500.0;
+const double eb_GSiC2I = 1300.0;
+const double eb_GSiC3I = 1600.0;
+const double eb_GCH3OHI = 4930.0;
+const double eb_GCO2I = 2990.0;
+const double eb_GH2SiOI = 1200.0;
+const double eb_GHNOI = 2050.0;
+const double eb_GN2I = 790.0;
+const double eb_GH2COI = 2050.0;
+const double eb_GHCNI = 3610.0;
+const double eb_GH2OI = 5770.0;
+const double eb_GNH3I = 3130.0;
+const double eb_GCH4I = 1090.0;
+const double eb_GSiH4I = 4500.0;
 
 
 

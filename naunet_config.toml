@@ -1,68 +1,84 @@
 # Naunet config document
 
 [general]
-creation_time = "10/02/2022 22:12:14"
-name = "naunet_dense_cloud_custom"
+creation_time = "01/02/2022 10:16:14"
+name = "naunet_klu_cloud_custom"
 description = "example"
+loads = ["custgrain.py"]
 
 [chemistry]
-elements = ["E", "H", "D", "He", "HE", "C", "N", "O", "SI", "S", "CL", "MG", "Si"]
+elements = ["E", "H", "D", "HE", "C", "N", "O", "MG", "SI", "S", "CL"]
 pseudo_elements = ["CR", "CRP", "PHOTON", "CRPHOT"]
 species = ["H", "H+", "H2", "H2+", "H3+", "HE", "HE+", "HEH+", "C", "C+", "CH", "CH+", "CH2", "CH2+", "N", "N+", "CH3", "CH3+", "NH", "NH+", "#CH4", "CH4", "CH4+", "NH2", "NH2+", "O", "O+", "#NH3", "NH3", "NH3+", "OH", "OH+", "#H2O", "H2O", "H2O+", "H3O+", "MG", "MG+", "#MG", "CN", "CN+", "#HCN", "#HNC", "HCN", "HCN+", "HNC", "#CO", "#N2", "CO", "CO+", "H2CN", "HCNH+", "N2", "N2+", "#H2CN", "SI", "SI+", "HCO", "HCO+", "HOC+", "N2H+", "SIH", "SIH+", "#NO", "#H2CO", "H2CO", "H2CO+", "NO", "NO+", "SIH2", "SIH2+", "H3CO+", "HNO", "HNO+", "#HNO", "SIH3", "SIH3+", "#O2", "#CH3OH", "CH3OH", "H2NO+", "O2", "O2+", "#SIH4", "SIH4", "SIH4+", "O2H", "O2H+", "#O2H", "SIH5+", "SIC", "SIC+", "#SIC", "OCN", "#HNCO", "HNCO", "#CO2", "CO2", "#SIO", "SIO", "SIO+", "HCO2+", "SIOH+", "#NO2", "NO2", "#H2SIO", "H2SIO", "SIC2", "SIC2+", "#SIC2", "#SIC3", "SIC3+", "SIC3", "E-"]
 extra_species = []
 network = ["reactions.ucl"]
-database = ["uclcustreaction"]
+format = ["uclcustom"]
 heating = []
 cooling = []
-ode_modifier = ["ydot[IDX_H2I] += H2formation*y[IDX_HI]*nH - H2dissociation*y[IDX_H2I]", "ydot[IDX_HI] += 2.0*(H2dissociation*y[IDX_H2I] - H2formation*y[IDX_HI]*nH)"]
+ode_modifier = ["ydot[IDX_H2I] += H2formation*y[IDX_HI] - H2dissociation*y[IDX_H2I]", "ydot[IDX_HI] += 2.0*(H2dissociation*y[IDX_H2I] - H2formation*y[IDX_HI])"]
 
-[chemistry.dust]
-type = "RR07custom"
+[chemistry.grain]
+model = "rr07custom"
 
 [chemistry.binding_energy]
-"#CH4" = 960.0
-"#NH3" = 5500.0
-"#H2O" = 5600.0
-"#C2" = 10000.0
+"#CH4" = 1090.0
+"#NH3" = 3130.0
+"#H2O" = 5770.0
+"#C2" = 1600.0
 "#MG" = 5300.0
-"#C2H" = 3000.0
+"#C2H" = 2137.0
 "#C2H2" = 2587.0
-"#HCN" = 3700.0
-"#HNC" = 3800.0
-"#C2H3" = 2800.0
-"#CO" = 1300.0
-"#N2" = 1100.0
-"#C2H4" = 2500.0
+"#HCN" = 3610.0
+"#HNC" = 2050.0
+"#C2H3" = 3037.0
+"#CO" = 1100.0
+"#N2" = 790.0
+"#C2H4" = 3487.0
 "#H2CN" = 2400.0
-"#C2H5" = 3100.0
+"#C2H5" = 3937.0
 "#NO" = 1600.0
-"#H2CO" = 4500.0
-"#HNO" = 3000.0
-"#O2" = 1200.0
-"#CH3OH" = 5000.0
-"#SIH4" = 13000.0
-"#O2H" = 5000.0
-"#C3H2" = 5900.0
-"#CH3CCH" = 3000.0
+"#H2CO" = 2050.0
+"#HNO" = 2050.0
+"#O2" = 1000.0
+"#CH3OH" = 4930.0
+"#SIH4" = 4500.0
+"#O2H" = 3650.0
+"#H2S" = 2743.0
+"#HCL" = 900.0
+"#C3H2" = 3387.0
+"#CH3CCH" = 4287.0
 "#SIC" = 3500.0
 "#CH3CN" = 4680.0
-"#CH2CO" = 2800.0
+"#CH2CO" = 2200.0
 "#CH3CNH" = 3740.0
-"#HNCO" = 4400.0
+"#HNCO" = 2850.0
 "#SIO" = 3500.0
-"#CO2" = 2600.0
-"#C2H5OH" = 5400.0
+"#CS" = 1900.0
+"#CO2" = 2990.0
+"#C2H5OH" = 5200.0
+"#H2CS" = 2700.0
 "#NO2" = 2400.0
-"#H2SIO" = 4400.0
+"#NS" = 1900.0
+"#H2SIO" = 1200.0
+"#SO" = 2600.0
 "#C4H" = 3737.0
 "#HC3N" = 4580.0
-"#NCCN" = 3000.0
-"#SIC2" = 4300.0
-"#HCOOCH3" = 4210.0
+"#NCCN" = 1300.0
+"#SIC2" = 1300.0
+"#HCOOCH3" = 4000.0
+"#SIS" = 3800.0
+"#OCS" = 2888.0
 "#C4N" = 4000.0
-"#SIC3" = 5100.0
+"#SIC3" = 1600.0
+"#SO2" = 5330.0
+"#H2S2" = 3100.0
 
 [chemistry.photon_yield]
+"#H2O" = 0.0013
+"#N2" = 0.00018
+"#CO" = 0.0027
+"#CH3OH" = 0.0021
+"#CO2" = 0.0023
 
 [chemistry.shielding]
 CO = "VB88Table"
@@ -75,12 +91,17 @@ device = "cpu"
 method = "dense"
 
 [summary]
+num_of_elements = 7
 num_of_species = 114
+num_of_grains = 1
 num_of_gas_species = 90
 num_of_ice_species = 24
+num_of_grain_species = 0
 num_of_reactions = 1403
-list_of_species = ["#CH3OH", "#CH4", "#CO", "#CO2", "#H2CN", "#H2CO", "#H2O", "#H2SIO", "#HCN", "#HNC", "#HNCO", "#HNO", "#MG", "#N2", "#NH3", "#NO", "#NO2", "#O2", "#O2H", "#SIC", "#SIC2", "#SIC3", "#SIH4", "#SIO", "C", "C+", "CH", "CH+", "CH2", "CH2+", "CH3", "CH3+", "CH3OH", "CH4", "CH4+", "CN", "CN+", "CO", "CO+", "CO2", "E-", "H", "H+", "H2", "H2+", "H2CN", "H2CO", "H2CO+", "H2NO+", "H2O", "H2O+", "H2SIO", "H3+", "H3CO+", "H3O+", "HCN", "HCN+", "HCNH+", "HCO", "HCO+", "HCO2+", "HE", "HE+", "HEH+", "HNC", "HNCO", "HNO", "HNO+", "HOC+", "MG", "MG+", "N", "N+", "N2", "N2+", "N2H+", "NH", "NH+", "NH2", "NH2+", "NH3", "NH3+", "NO", "NO+", "NO2", "O", "O+", "O2", "O2+", "O2H", "O2H+", "OCN", "OH", "OH+", "SI", "SI+", "SIC", "SIC+", "SIC2", "SIC2+", "SIC3", "SIC3+", "SIH", "SIH+", "SIH2", "SIH2+", "SIH3", "SIH3+", "SIH4", "SIH4+", "SIH5+", "SIO", "SIO+", "SIOH+"]
-list_of_species_alias = ["GCH3OHI", "GCH4I", "GCOI", "GCO2I", "GH2CNI", "GH2COI", "GH2OI", "GH2SiOI", "GHCNI", "GHNCI", "GHNCOI", "GHNOI", "GMgI", "GN2I", "GNH3I", "GNOI", "GNO2I", "GO2I", "GO2HI", "GSiCI", "GSiC2I", "GSiC3I", "GSiH4I", "GSiOI", "CI", "CII", "CHI", "CHII", "CH2I", "CH2II", "CH3I", "CH3II", "CH3OHI", "CH4I", "CH4II", "CNI", "CNII", "COI", "COII", "CO2I", "EM", "HI", "HII", "H2I", "H2II", "H2CNI", "H2COI", "H2COII", "H2NOII", "H2OI", "H2OII", "H2SiOI", "H3II", "H3COII", "H3OII", "HCNI", "HCNII", "HCNHII", "HCOI", "HCOII", "HCO2II", "HeI", "HeII", "HeHII", "HNCI", "HNCOI", "HNOI", "HNOII", "HOCII", "MgI", "MgII", "NI", "NII", "N2I", "N2II", "N2HII", "NHI", "NHII", "NH2I", "NH2II", "NH3I", "NH3II", "NOI", "NOII", "NO2I", "OI", "OII", "O2I", "O2II", "O2HI", "O2HII", "OCNI", "OHI", "OHII", "SiI", "SiII", "SiCI", "SiCII", "SiC2I", "SiC2II", "SiC3I", "SiC3II", "SiHI", "SiHII", "SiH2I", "SiH2II", "SiH3I", "SiH3II", "SiH4I", "SiH4II", "SiH5II", "SiOI", "SiOII", "SiOHII"]
-list_of_gas_species = ["C", "C+", "CH", "CH+", "CH2", "CH2+", "CH3", "CH3+", "CH3OH", "CH4", "CH4+", "CN", "CN+", "CO", "CO+", "CO2", "E-", "H", "H+", "H2", "H2+", "H2CN", "H2CO", "H2CO+", "H2NO+", "H2O", "H2O+", "H2SIO", "H3+", "H3CO+", "H3O+", "HCN", "HCN+", "HCNH+", "HCO", "HCO+", "HCO2+", "HE", "HE+", "HEH+", "HNC", "HNCO", "HNO", "HNO+", "HOC+", "MG", "MG+", "N", "N+", "N2", "N2+", "N2H+", "NH", "NH+", "NH2", "NH2+", "NH3", "NH3+", "NO", "NO+", "NO2", "O", "O+", "O2", "O2+", "O2H", "O2H+", "OCN", "OH", "OH+", "SI", "SI+", "SIC", "SIC+", "SIC2", "SIC2+", "SIC3", "SIC3+", "SIH", "SIH+", "SIH2", "SIH2+", "SIH3", "SIH3+", "SIH4", "SIH4+", "SIH5+", "SIO", "SIO+", "SIOH+"]
-list_of_ice_species = ["#CH3OH", "#CH4", "#CO", "#CO2", "#H2CN", "#H2CO", "#H2O", "#H2SIO", "#HCN", "#HNC", "#HNCO", "#HNO", "#MG", "#N2", "#NH3", "#NO", "#NO2", "#O2", "#O2H", "#SIC", "#SIC2", "#SIC3", "#SIH4", "#SIO"]
+list_of_elements = ["MG", "SI", "HE", "N", "C", "O", "H"]
+list_of_species = ["#H2CN", "#HNC", "#NO2", "#SIO", "#CO", "#HNCO", "#MG", "#NO", "#O2", "#O2H", "#SIC", "#SIC2", "#SIC3", "#CH3OH", "#CO2", "#H2SIO", "#HNO", "#N2", "#H2CO", "#HCN", "#H2O", "#NH3", "SIC3+", "H2CN", "#CH4", "H2NO+", "H2SIO", "HEH+", "HNCO", "HOC+", "SIC2+", "#SIH4", "SIC2", "SIC3", "SIH5+", "SIH4+", "SIC+", "O2H", "SIC", "NO2", "SIH3+", "SIH2+", "OCN", "SIH2", "SIOH+", "SIH+", "SIH4", "SIH", "SIH3", "SIO+", "HCO2+", "HNO", "CH3OH", "MG", "MG+", "CH4+", "SIO", "CN+", "HCNH+", "N2H+", "O2H+", "SI+", "SI", "HNC", "HNO+", "N2+", "H3CO+", "CH4", "CO+", "H2+", "NH3", "CH3", "CO2", "N+", "O+", "HCN+", "NH2+", "NH+", "O2+", "CH3+", "NH2", "CH2+", "H2O+", "NH3+", "NO+", "H3O+", "N2", "C+", "HCN", "CH+", "CH2", "H2CO+", "NH", "OH+", "CN", "H2CO", "HCO", "HE+", "CH", "H3+", "HE", "NO", "N", "OH", "O2", "C", "H+", "HCO+", "H2O", "O", "E-", "CO", "H2", "H"]
+list_of_species_alias = ["GH2CNI", "GHNCI", "GNO2I", "GSiOI", "GCOI", "GHNCOI", "GMgI", "GNOI", "GO2I", "GO2HI", "GSiCI", "GSiC2I", "GSiC3I", "GCH3OHI", "GCO2I", "GH2SiOI", "GHNOI", "GN2I", "GH2COI", "GHCNI", "GH2OI", "GNH3I", "SiC3II", "H2CNI", "GCH4I", "H2NOII", "H2SiOI", "HeHII", "HNCOI", "HOCII", "SiC2II", "GSiH4I", "SiC2I", "SiC3I", "SiH5II", "SiH4II", "SiCII", "O2HI", "SiCI", "NO2I", "SiH3II", "SiH2II", "OCNI", "SiH2I", "SiOHII", "SiHII", "SiH4I", "SiHI", "SiH3I", "SiOII", "HCO2II", "HNOI", "CH3OHI", "MgI", "MgII", "CH4II", "SiOI", "CNII", "HCNHII", "N2HII", "O2HII", "SiII", "SiI", "HNCI", "HNOII", "N2II", "H3COII", "CH4I", "COII", "H2II", "NH3I", "CH3I", "CO2I", "NII", "OII", "HCNII", "NH2II", "NHII", "O2II", "CH3II", "NH2I", "CH2II", "H2OII", "NH3II", "NOII", "H3OII", "N2I", "CII", "HCNI", "CHII", "CH2I", "H2COII", "NHI", "OHII", "CNI", "H2COI", "HCOI", "HeII", "CHI", "H3II", "HeI", "NOI", "NI", "OHI", "O2I", "CI", "HII", "HCOII", "H2OI", "OI", "EM", "COI", "H2I", "HI"]
+list_of_gas_species = ["SIC3+", "H2CN", "H2NO+", "H2SIO", "HEH+", "HNCO", "HOC+", "SIC2+", "SIC2", "SIC3", "SIH5+", "SIH4+", "SIC+", "O2H", "SIC", "NO2", "SIH3+", "SIH2+", "OCN", "SIH2", "SIOH+", "SIH+", "SIH4", "SIH", "SIH3", "SIO+", "HCO2+", "HNO", "CH3OH", "MG", "MG+", "CH4+", "SIO", "CN+", "HCNH+", "N2H+", "O2H+", "SI+", "SI", "HNC", "HNO+", "N2+", "H3CO+", "CH4", "CO+", "H2+", "NH3", "CH3", "CO2", "N+", "O+", "HCN+", "NH2+", "NH+", "O2+", "CH3+", "NH2", "CH2+", "H2O+", "NH3+", "NO+", "H3O+", "N2", "C+", "HCN", "CH+", "CH2", "H2CO+", "NH", "OH+", "CN", "H2CO", "HCO", "HE+", "CH", "H3+", "HE", "NO", "N", "OH", "O2", "C", "H+", "HCO+", "H2O", "O", "E-", "CO", "H2", "H"]
+list_of_ice_species = ["#H2CN", "#HNC", "#NO2", "#SIO", "#CO", "#HNCO", "#MG", "#NO", "#O2", "#O2H", "#SIC", "#SIC2", "#SIC3", "#CH3OH", "#CO2", "#H2SIO", "#HNO", "#N2", "#H2CO", "#HCN", "#H2O", "#NH3", "#CH4", "#SIH4"]
+list_of_grain_species = []
 

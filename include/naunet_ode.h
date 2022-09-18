@@ -5,8 +5,8 @@
 #include <sundials/sundials_nvector.h>
 #include <sundials/sundials_types.h>  // defs. of realtype, sunindextype
 
-#include "naunet_macros.h"
 #include "naunet_data.h"
+#include "naunet_macros.h"
 
 /* */
 int EvalRates(realtype *k, realtype *y, NaunetData *user_data);

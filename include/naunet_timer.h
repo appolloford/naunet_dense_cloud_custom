@@ -1,6 +1,7 @@
 #ifndef __NAUNET_TIMER_H__
 #define __NAUNET_TIMER_H__
 
+// 
 #include <chrono>
 
 class Timer {
@@ -30,5 +31,4 @@ class Timer {
         return m_duration.count();
     };
 };
-
 #endif
