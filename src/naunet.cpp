@@ -416,10 +416,10 @@ int Naunet::Solve(realtype *ab, realtype dt, NaunetData *data) {
         return NAUNET_FAIL;
     }
 
-    cvflag = CVodeSetJacFn(cv_mem_, Jac);
-    if (CheckFlag(&cvflag, "CVodeSetJacFn", 1, errfp_) == NAUNET_FAIL) {
-        return NAUNET_FAIL;
-    }
+    // cvflag = CVodeSetJacFn(cv_mem_, Jac);
+    // if (CheckFlag(&cvflag, "CVodeSetJacFn", 1, errfp_) == NAUNET_FAIL) {
+    //     return NAUNET_FAIL;
+    // }
 
     cvflag = CVodeSetUserData(cv_mem_, data);
     if (CheckFlag(&cvflag, "CVodeSetUserData", 1, errfp_) == NAUNET_FAIL) {
