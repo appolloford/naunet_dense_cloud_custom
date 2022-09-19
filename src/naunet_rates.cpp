@@ -2553,214 +2553,257 @@ int EvalRates(realtype *k, realtype *y, NaunetData *u_data) {
         
     k[1222] = 4.26e-12 * pow(Tgas/300.0, -0.62);
         
-    k[1223] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0);
+    if (Tgas<30.0) { k[1223] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        32.0); }
         
-    k[1224] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 43.0);
+    if (Tgas<30.0) { k[1224] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        43.0); }
         
-    k[1225] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 42.0);
+    if (Tgas<30.0) { k[1225] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        42.0); }
         
-    k[1226] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1226] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1227] = 4.57e4 * 0.0 * gxsec * fr * sqrt(Tgas / 28.0);
+    if (Tgas<30.0) { k[1227] = 4.57e4 * 0.0 * gxsec * fr * sqrt(Tgas /
+        28.0); }
         
-    k[1228] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0);
+    if (Tgas<30.0) { k[1228] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        28.0); }
         
-    k[1229] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 44.0);
+    if (Tgas<30.0) { k[1229] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        44.0); }
         
-    k[1230] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0);
+    if (Tgas<30.0) { k[1230] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        29.0); }
         
-    k[1231] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1231] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1232] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1232] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1233] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0);
+    if (Tgas<30.0) { k[1233] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        30.0); }
         
-    k[1234] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1234] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1235] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0);
+    if (Tgas<30.0) { k[1235] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        31.0); }
         
-    k[1236] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1236] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1237] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0);
+    if (Tgas<30.0) { k[1237] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        32.0); }
         
-    k[1238] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1238] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1239] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 40.0);
+    if (Tgas<30.0) { k[1239] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        40.0); }
         
-    k[1240] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 52.0);
+    if (Tgas<30.0) { k[1240] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        52.0); }
         
-    k[1241] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 40.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1241] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 40.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1242] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 52.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1242] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 52.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1243] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 64.0);
+    if (Tgas<30.0) { k[1243] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        64.0); }
         
-    k[1244] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 64.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1244] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 64.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1245] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 44.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1245] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 44.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1246] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 45.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1246] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 45.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1247] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 46.0);
+    if (Tgas<30.0) { k[1247] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        46.0); }
         
-    k[1248] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 33.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1248] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 33.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1249] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1249] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1250] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 12.0);
+    if (Tgas<30.0) { k[1250] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        12.0); }
         
-    k[1251] = 4.57e4 * 0.9 * gxsec * fr * sqrt(Tgas / 28.0);
+    if (Tgas<30.0) { k[1251] = 4.57e4 * 0.9 * gxsec * fr * sqrt(Tgas /
+        28.0); }
         
-    k[1252] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0);
+    if (Tgas<30.0) { k[1252] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        30.0); }
         
-    k[1253] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 13.0);
+    if (Tgas<30.0) { k[1253] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        13.0); }
         
-    k[1254] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 17.0);
+    if (Tgas<30.0) { k[1254] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        17.0); }
         
-    k[1255] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0);
+    if (Tgas<30.0) { k[1255] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        30.0); }
         
-    k[1256] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 14.0);
+    if (Tgas<30.0) { k[1256] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        14.0); }
         
-    k[1257] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 18.0);
+    if (Tgas<30.0) { k[1257] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        18.0); }
         
-    k[1258] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 44.0);
+    if (Tgas<30.0) { k[1258] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        44.0); }
         
-    k[1259] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 15.0);
+    if (Tgas<30.0) { k[1259] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        15.0); }
         
-    k[1260] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0);
+    if (Tgas<30.0) { k[1260] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        16.0); }
         
-    k[1261] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0);
+    if (Tgas<30.0) { k[1261] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        29.0); }
         
-    k[1262] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0);
+    if (Tgas<30.0) { k[1262] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        28.0); }
         
-    k[1263] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 26.0);
+    if (Tgas<30.0) { k[1263] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        26.0); }
         
-    k[1264] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 12.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1264] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 12.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1265] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 15.0);
+    if (Tgas<30.0) { k[1265] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        15.0); }
         
-    k[1266] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 27.0);
+    if (Tgas<30.0) { k[1266] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        27.0); }
         
-    k[1267] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 17.0);
+    if (Tgas<30.0) { k[1267] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        17.0); }
         
-    k[1268] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 14.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1268] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 14.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1269] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1269] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1270] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1270] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1271] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1271] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1272] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 13.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1272] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 13.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1273] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 15.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1273] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 15.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1274] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 17.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1274] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 17.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1275] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1275] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1276] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 26.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1276] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 26.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1277] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1277] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1278] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 14.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1278] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 14.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1279] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1279] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1280] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 18.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1280] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 18.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1281] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1281] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1282] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 27.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1282] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 27.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1283] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 17.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1283] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 17.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1284] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1284] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 30.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1285] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 15.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1285] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 15.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1286] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 19.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1286] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 19.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1287] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 45.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1287] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 45.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1288] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1288] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1289] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0);
+    if (Tgas<30.0) { k[1289] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        16.0); }
         
-    k[1290] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 14.0);
+    if (Tgas<30.0) { k[1290] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        14.0); }
         
-    k[1291] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 16.0);
+    if (Tgas<30.0) { k[1291] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        16.0); }
         
-    k[1292] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0);
+    if (Tgas<30.0) { k[1292] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        32.0); }
         
-    k[1293] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 46.0);
+    if (Tgas<30.0) { k[1293] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        46.0); }
         
-    k[1294] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0);
+    if (Tgas<30.0) { k[1294] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        31.0); }
         
-    k[1295] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1295] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 31.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1296] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1296] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 32.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1297] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 33.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1297] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 33.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1298] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0);
+    if (Tgas<30.0) { k[1298] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        28.0); }
         
-    k[1299] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 24.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1299] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 24.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1300] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 24.0);
+    if (Tgas<30.0) { k[1300] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        24.0); }
         
-    k[1301] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1301] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 28.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1302] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0) * ( 1.0 +
-        16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1302] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 29.0)
+        * ( 1.0 + 16.71e-4/(rG * Tgas) ); }
         
-    k[1303] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 33.0);
+    if (Tgas<30.0) { k[1303] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        33.0); }
         
-    k[1304] = 4.57e4 * 0.1 * gxsec * fr * sqrt(Tgas / 28.0);
+    if (Tgas<30.0) { k[1304] = 4.57e4 * 0.1 * gxsec * fr * sqrt(Tgas /
+        28.0); }
         
-    k[1305] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas / 27.0);
+    if (Tgas<30.0) { k[1305] = 4.57e4 * 1.0 * gxsec * fr * sqrt(Tgas /
+        27.0); }
         
-    k[1306] = 4.57e4 * 1.0 * gxsec * fr * ( 1.0 + 16.71e-4/(rG * Tgas) );
+    if (Tgas<30.0) { k[1306] = 4.57e4 * 1.0 * gxsec * fr * ( 1.0 +
+        16.71e-4/(rG * Tgas) ); }
         
     k[1307] = mantabund > 1e-30 ? (eb_h2d >= 1090.0 ? (opt_h2d * h2deseff *
         H2formation * y[IDX_HI] / mant) : 0.0) : 0.0;

@@ -17,8 +17,9 @@ class CUSTOMReaction(UCLCHEMReaction):
     def _parse_string(self, react_string) -> None:
 
         super()._parse_string(react_string)
-        self.temp_min = -1.0
-        self.temp_max = -1.0
+        if self.reaction_type != self.ReactionType.UCLCHEM_FR:
+            self.temp_min = -1.0
+            self.temp_max = -1.0
 
 @define_grain("rr07custom")
 class CUSTOMGrain(RR07XGrain):
