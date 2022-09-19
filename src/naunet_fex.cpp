@@ -2466,7 +2466,8 @@ int Fex(realtype t, N_Vector u, N_Vector udot, void *user_data) {
         k[1185]*y[IDX_SiH4I] + k[1187]*y[IDX_SiH4I] -
         k[1199]*y[IDX_H2I]*y[IDX_CII] - k[1200]*y[IDX_H2I]*y[IDX_CI] -
         k[1201]*y[IDX_H2I]*y[IDX_CHI] - k[1202]*y[IDX_H2I]*y[IDX_SiII] -
-        k[1203]*y[IDX_H2I]*y[IDX_SiHII] - k[1204]*y[IDX_H2I]*y[IDX_SiH3II];
+        k[1203]*y[IDX_H2I]*y[IDX_SiHII] - k[1204]*y[IDX_H2I]*y[IDX_SiH3II] +
+        (H2formation) * y[IDX_HI] + (-H2dissociation) * y[IDX_H2I];
     ydot[IDX_HI] = 0.0 + k[2]*y[IDX_H2I]*y[IDX_CHI] +
         k[3]*y[IDX_H2I]*y[IDX_H2I] + k[3]*y[IDX_H2I]*y[IDX_H2I] +
         k[4]*y[IDX_H2I]*y[IDX_H2OI] + k[7]*y[IDX_H2I]*y[IDX_OHI] +
@@ -2647,10 +2648,9 @@ int Fex(realtype t, N_Vector u, N_Vector udot, void *user_data) {
         k[1208]*y[IDX_HI]*y[IDX_OHI] - k[1209]*y[IDX_HI]*y[IDX_SiII] +
         k[1216]*y[IDX_HII]*y[IDX_EM] + k[1248]*y[IDX_SiH5II] +
         k[1286]*y[IDX_H3OII] + k[1287]*y[IDX_HCO2II] + k[1296]*y[IDX_H2NOII] +
-        k[1301]*y[IDX_HCNHII] + k[1302]*y[IDX_N2HII];
+        k[1301]*y[IDX_HCNHII] + k[1302]*y[IDX_N2HII] + (-2.0 * H2formation) *
+        y[IDX_HI] + (2.0 * H2dissociation) * y[IDX_H2I];
     
-    ydot[IDX_H2I] += H2formation*y[IDX_HI] - H2dissociation*y[IDX_H2I];
-    ydot[IDX_HI] += 2.0*(H2dissociation*y[IDX_H2I] - H2formation*y[IDX_HI]);
     
 #if ((NHEATPROCS || NCOOLPROCS) && NAUNET_DEBUG)
     printf("Total heating/cooling rate: %13.7e\n", ydot[IDX_TGAS]);

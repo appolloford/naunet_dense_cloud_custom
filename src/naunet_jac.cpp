@@ -5262,7 +5262,7 @@ int Jac(realtype t, N_Vector u, N_Vector fu, SUNMatrix jmatrix, void *user_data,
                         - k[966]*y[IDX_OHI] - k[1199]*y[IDX_CII] -
                         k[1200]*y[IDX_CI] - k[1201]*y[IDX_CHI] -
                         k[1202]*y[IDX_SiII] - k[1203]*y[IDX_SiHII] -
-                        k[1204]*y[IDX_SiH3II];
+                        k[1204]*y[IDX_SiH3II] + (-H2dissociation);
     IJth(jmatrix, 112, 113) = 0.0 - k[10]*y[IDX_H2I] + k[128]*y[IDX_H2II] +
                         k[614]*y[IDX_CHII] + k[615]*y[IDX_CH2II] +
                         k[616]*y[IDX_CH3II] + k[617]*y[IDX_CH4II] +
@@ -5273,7 +5273,7 @@ int Jac(realtype t, N_Vector u, N_Vector fu, SUNMatrix jmatrix, void *user_data,
                         k[976]*y[IDX_HCNI] + k[977]*y[IDX_HCOI] +
                         k[981]*y[IDX_HNOI] + k[983]*y[IDX_NH2I] +
                         k[984]*y[IDX_NH3I] + k[985]*y[IDX_NHI] +
-                        k[991]*y[IDX_O2HI] + k[996]*y[IDX_OHI];
+                        k[991]*y[IDX_O2HI] + k[996]*y[IDX_OHI] + (H2formation);
     IJth(jmatrix, 113, 23) = 0.0 + k[254] - k[973]*y[IDX_HI] + k[1135];
     IJth(jmatrix, 113, 25) = 0.0 + k[310]*y[IDX_EM] + k[1296];
     IJth(jmatrix, 113, 26) = 0.0 + k[675]*y[IDX_HeII] + k[1144] + k[1144];
@@ -5571,7 +5571,8 @@ int Jac(realtype t, N_Vector u, N_Vector fu, SUNMatrix jmatrix, void *user_data,
                         k[957]*y[IDX_CH3I] + k[958]*y[IDX_CHI] +
                         k[959]*y[IDX_CNI] + k[960]*y[IDX_NI] +
                         k[961]*y[IDX_NH2I] + k[962]*y[IDX_NHI] +
-                        k[963]*y[IDX_O2I] + k[965]*y[IDX_OI] + k[966]*y[IDX_OHI];
+                        k[963]*y[IDX_O2I] + k[965]*y[IDX_OI] + k[966]*y[IDX_OHI]
+                        + (2.0 * H2dissociation);
     IJth(jmatrix, 113, 113) = 0.0 - k[9]*y[IDX_CHI] + k[9]*y[IDX_CHI] +
                         k[9]*y[IDX_CHI] - k[10]*y[IDX_H2I] + k[10]*y[IDX_H2I] +
                         k[10]*y[IDX_H2I] + k[10]*y[IDX_H2I] - k[11]*y[IDX_H2OI]
@@ -5601,7 +5602,8 @@ int Jac(realtype t, N_Vector u, N_Vector fu, SUNMatrix jmatrix, void *user_data,
                         k[995]*y[IDX_OCNI] - k[996]*y[IDX_OHI] -
                         k[1197]*y[IDX_HII] - k[1205]*y[IDX_CII] -
                         k[1206]*y[IDX_CI] - k[1207]*y[IDX_OI] -
-                        k[1208]*y[IDX_OHI] - k[1209]*y[IDX_SiII];
+                        k[1208]*y[IDX_OHI] - k[1209]*y[IDX_SiII] + (-2.0 *
+                        H2formation);
     
     // clang-format on
 
